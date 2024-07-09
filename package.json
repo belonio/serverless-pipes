@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/distinction-dev/serverless-pipes.git"
+    "url": "git+https://github.com/belonio/serverless-pipes.git"
   },
   "license": "MIT",
   "author": {
@@ -38,7 +38,7 @@
     "typescript"
   ],
   "bugs": {
-    "url": "https://github.com/distinction-dev/serverless-pipes/issues"
+    "url": "https://github.com/belonio/serverless-pipes/issues"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
