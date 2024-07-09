@@ -10,7 +10,7 @@
     "coverage": "codecov",
     "lint": "eslint ./src/ --fix",
     "prepare": "husky install",
-    "semantic-release": "semantic-release",
+    "semantic-release": "husky uninstall && semantic-release",
     "type-check": "tsc --noEmit",
     "test-prepare": "cp -f 'src/index.ts' 'src/index-copy.ts' && sed -i 's/module.exports = ServerlessPipes;//g' 'src/index-copy.ts' && sed -i 's/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index\";/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index-copy\";/g' 'tests/pipes.test.ts'",
     "test-temp": "yarn test-prepare &&  TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' && yarn test-cleanup",
