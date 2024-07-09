@@ -44,8 +44,8 @@ plugins:
   - serverless-pipes
 
 functions:
-    pipeEnricher:
-        handler: functions/pipeEnricher.handler
+  pipeEnricher:
+    handler: functions/pipeEnricher.handler
 
 pipes:
   testPipe: #pipeName
@@ -61,10 +61,11 @@ pipes:
     enrichment:
       name: pipeEnricher
     filter:
-      - Pattern: "{ \"body\": { \"message\": [ \"hello\" ], \"city\": [ \"hey\" ] }}"
+      - Pattern: '{ "body": { "message": [ "hello" ], "city": [ "hey" ] }}'
     iamRolePipes:
       type: "individual"
-  testPipe: #pipeName
+
+  anotherTestPipe: #pipeName
     enabled: true
     source:
       sqs:
@@ -75,10 +76,9 @@ pipes:
     enrichment:
       name: pipeEnricher
     filter:
-      - Pattern: "{ \"body\": { \"message\": [ \"hello\" ], \"city\": [ \"hey\" ] }}"
+      - Pattern: '{ "body": { "message": [ "hello" ], "city": [ "hey" ] }}'
     iamRolePipes:
       type: "individual"
-
 ```
 
 For documentation refer [Docs](docs/index.md)
