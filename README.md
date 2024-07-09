@@ -76,6 +76,21 @@ pipes:
       - Pattern: '{ "body": { "message": [ "hello" ], "city": [ "hey" ] }}'
     iamRolePipes:
       type: "individual"
+
+  anotherTestPipe: #pipeName
+    enabled: true
+    source:
+      sqs:
+        arn: arn:aws:sqs:eu-central-1:123456789012:source-queue-name
+    target:
+      sns:
+        arn: arn:aws:sqs:eu-central-1:123456789012:target-queue-name
+    enrichment:
+      name: pipeEnricher
+    filter:
+      - Pattern: '{ "body": { "message": [ "hello" ], "city": [ "hey" ] }}'
+    iamRolePipes:
+      type: "individual"
 ```
 
 For documentation refer [Docs](docs/index.md)
