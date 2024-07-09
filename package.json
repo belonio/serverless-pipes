@@ -1,5 +1,5 @@
 {
-  "name": "serverless-pipes",
+  "name": "@belonio/serverless-pipes",
   "version": "0.0.0-development",
   "description": "Serverless Framework plugin called as \"pipes\", used to create EventBridge Pipes by providing the required event sources, targets and other parameters as needed.",
   "scripts": {
@@ -12,10 +12,10 @@
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "type-check": "tsc --noEmit",
-    "test-prepare":"cp -f 'src/index.ts' 'src/index-copy.ts' && sed -i 's/module.exports = ServerlessPipes;//g' 'src/index-copy.ts' && sed -i 's/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index\";/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index-copy\";/g' 'tests/pipes.test.ts'",
+    "test-prepare": "cp -f 'src/index.ts' 'src/index-copy.ts' && sed -i 's/module.exports = ServerlessPipes;//g' 'src/index-copy.ts' && sed -i 's/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index\";/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index-copy\";/g' 'tests/pipes.test.ts'",
     "test-temp": "yarn test-prepare &&  TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' && yarn test-cleanup",
-    "test":"TS_NODE_PROJECT='./tsconfig.base.json' mocha -r ts-node/register 'tests/**/*.ts'",
-    "test-cleanup":"sed -i 's/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index-copy\";/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index\";/g' 'tests/pipes.test.ts' && rm -f 'src/index-copy.ts'"
+    "test": "TS_NODE_PROJECT='./tsconfig.base.json' mocha -r ts-node/register 'tests/**/*.ts'",
+    "test-cleanup": "sed -i 's/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index-copy\";/import { ServerlessPipes, ServerlessPluginOptions } from \"..\\/src\\/index\";/g' 'tests/pipes.test.ts' && rm -f 'src/index-copy.ts'"
   },
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
@@ -39,6 +39,9 @@
   ],
   "bugs": {
     "url": "https://github.com/distinction-dev/serverless-pipes/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://github.com/distinction-dev/serverless-pipes#readme",
   "devDependencies": {
