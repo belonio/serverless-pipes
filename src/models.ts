@@ -114,6 +114,8 @@ export function getSharedIAMRole(): Record<string, any> {
         "kinesis:PutRecord",
         "sns:Subscribe",
         "sns:Publish",
+        "states:StartExecution",
+        "states:StartSyncExecution"
       ],
       Resource: "*",
     },
