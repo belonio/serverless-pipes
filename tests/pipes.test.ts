@@ -103,6 +103,8 @@ describe("ServerlessPipes", () => {
                         "kinesis:PutRecord",
                         "sns:Subscribe",
                         "sns:Publish",
+                        "states:StartExecution",
+                        "states:StartSyncExecution"
                       ],
                       Resource: "*",
                     },
