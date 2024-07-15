@@ -74,7 +74,7 @@ export function getTargetStepFunctionIAMRole(): Record<string, any> {
   return {
     Statement: {
       Effect: "Allow",
-      Action: ["states:StartExecution"],
+      Action: ["states:StartExecution", "states:StartSyncExecution"],
       Resource: "*",
     },
   };
