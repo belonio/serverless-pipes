@@ -149,7 +149,9 @@ class ServerlessPipes {
           Properties: {
             RoleName:
               this.config[PipeName]?.iamRolePipes?.type === "individual"
-                ? `${PipeName}-pipes-iam-role-${this.serverless.service.provider.stage}`
+                ? `${PipeName}-pipes-iam-role-${
+                    this.options.stage || this.serverless.service.provider.stage
+                  }`
                 : this.config[PipeName]?.iamRolePipes?.type === "shared"
                 ? "shared-pipes-iam-role"
                 : "",
