@@ -104,7 +104,7 @@ describe("ServerlessPipes", () => {
                         "sns:Subscribe",
                         "sns:Publish",
                         "states:StartExecution",
-                        "states:StartSyncExecution"
+                        "states:StartSyncExecution",
                       ],
                       Resource: "*",
                     },
@@ -139,7 +139,7 @@ describe("ServerlessPipes", () => {
         testPipePipesIAMRole: {
           Type: "AWS::IAM::Role",
           Properties: {
-            RoleName: "testPipe-pipes-iam-role",
+            RoleName: "testPipe-pipes-iam-role-dev",
             AssumeRolePolicyDocument: {
               Version: "2012-10-17",
               Statement: [
