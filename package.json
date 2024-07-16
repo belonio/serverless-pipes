@@ -1,6 +1,6 @@
 {
   "name": "@belonio/serverless-pipes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Serverless Framework plugin called as \"pipes\", used to create EventBridge Pipes by providing the required event sources, targets and other parameters as needed.",
   "scripts": {
     "clean": "rm -rf ./lib/",
