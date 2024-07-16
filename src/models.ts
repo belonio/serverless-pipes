@@ -115,7 +115,7 @@ export function getSharedIAMRole(): Record<string, any> {
         "sns:Subscribe",
         "sns:Publish",
         "states:StartExecution",
-        "states:StartSyncExecution"
+        "states:StartSyncExecution",
       ],
       Resource: "*",
     },

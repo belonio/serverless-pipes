@@ -36,6 +36,7 @@ class ServerlessPipes {
   sharedIAMRoleARN: string;
   constructor(serverless: Serverless, options: ServerlessPluginOptions) {
     this.serverless = serverless;
+    this.options = options;
     this.sharedIAMRoleARN = "EventBridgePipesSharedIAMRole";
     this.sharedIAMRoleCount = 0;
     this.extendedServerless = serverless as Serverless & {
@@ -148,7 +149,7 @@ class ServerlessPipes {
           Properties: {
             RoleName:
               this.config[PipeName]?.iamRolePipes?.type === "individual"
-                ? `${PipeName}-pipes-iam-role`
+                ? `${PipeName}-pipes-iam-role-${this.serverless.service.provider.stage}`
                 : this.config[PipeName]?.iamRolePipes?.type === "shared"
                 ? "shared-pipes-iam-role"
                 : "",
